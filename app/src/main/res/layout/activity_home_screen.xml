@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/home_background"
+    android:orientation="vertical"
+    tools:context=".HomeScreenActivity"
+    android:id="@+id/drawer_layout">
+
+
+
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:id="@+id/profile_image"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/ic_user"
+        />
+
+    <Button
+        android:id="@+id/btn_photo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/Widget.AppCompat.ActionButton.CloseMode"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/profile_image"
+        android:text="Edit Profile"
+        android:textSize="20dp"
+        />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_photo"
+        android:layout_marginLeft="30dp"
+        android:id="@+id/layout_text1"
+        android:layout_marginRight="30dp"
+        android:weightSum="2"
+        android:orientation="horizontal">
+        <ImageView
+            android:src="@drawable/ic_person"
+            android:layout_width="70dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"/>
+
+        <EditText
+            android:id="@+id/dt_Name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Name"
+            android:inputType="textPersonName"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/layout_text1"
+        android:layout_marginLeft="30dp"
+        android:id="@+id/layout_text2"
+        android:layout_marginRight="30dp"
+        android:weightSum="2"
+        android:orientation="horizontal">
+        <ImageView
+            android:src="@drawable/ic_email"
+            android:layout_width="70dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"/>
+
+        <EditText
+            android:id="@+id/dt_Email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Email"
+            android:inputType="textEmailAddress"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/layout_text2"
+        android:layout_marginLeft="30dp"
+        android:id="@+id/layout_text3"
+        android:layout_marginRight="30dp"
+        android:weightSum="2"
+        android:orientation="horizontal">
+        <ImageView
+            android:src="@drawable/ic_contact_number"
+            android:layout_width="70dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"/>
+
+        <EditText
+            android:id="@+id/dt_Phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Contact Number"
+            android:inputType="phone"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/layout_text3"
+        android:layout_marginLeft="30dp"
+        android:id="@+id/layout_text4"
+        android:layout_marginRight="30dp"
+        android:weightSum="2"
+        android:orientation="horizontal">
+        <ImageView
+            android:src="@drawable/ic_contact_add"
+            android:layout_width="70dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"/>
+
+        <EditText
+            android:id="@+id/dt_Address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Address"
+            android:inputType="textPersonName"/>
+
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/btn_Continue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Logout"
+        android:backgroundTint="@color/CornflowerBlue"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="500dp"
+        />
+
+
+
+
+
+
+        </RelativeLayout>

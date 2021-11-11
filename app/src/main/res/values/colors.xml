@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FFE400</color>
+    <color name="colorPrimaryDark">#FFA600</color>
+    <color name="colorAccent">#272727</color>
+    <color name="lightWhite">#F5F5F5</color>
+    <color name="CornflowerBlue">#6495ED</color>
+
+    //
+    <color name="tfe_color_primary">#ffa800</color>
+    <color name="tfe_color_primary_dark">#ff6f00</color>
+    <color name="tfe_color_accent">#425066</color>
+
+    <color name="tfe_semi_transparent">#66000000</color>
+
+
+    //
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!--- Dashboard Colors  -->
+
+    <style name="navigationTheme">
+
+        <item name="colorPrimary">#FFE400</item>
+
+        <item name="colorControlHighlight">@color/colorAccent</item>
+
+    </style>
+
+    <!--- Body and background colors  -->
+
+    <color name="home_background">
+        #ebedf0
+    </color>
+    <color name="banner_background">#F1E9CE</color>
+    <color name="banner_background_light">#56F1E9CE</color>
+
+    <!--- card color  -->
+
+    <color name="card1">#d4cbe5</color>
+    <color name="card2">#7adccf</color>
+    <color name="card3">#f7c59f</color>
+    <color name="card4">#b8d7f5</color>
+
+</resources>

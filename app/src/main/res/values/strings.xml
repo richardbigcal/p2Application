@@ -1,0 +1,57 @@
+<resources>
+    <string name="app_name">P2 Application</string>
+    <string name="wrongpassword">" Password should be atleast 6 characters! "</string>
+    <string name="passwordisnotcorrect">Password doesn\'t match!</string>
+    // Tensor
+    <string name="tfe_ic_app_name" translation_description="Image Classification demo app [CHAR_LIMIT=40]">TFL Classify</string>
+    <string name="tfe_ic_camera_error" translation_description="Error regarding camera support[CHAR_LIMIT=40]">This device doesn\'t support Camera2 API.</string>
+    <string name="tfe_ic_gpu_quant_error" translation_description="Error regarding GPU support for Quant models[CHAR_LIMIT=60]">GPU does not yet supported quantized models.</string>
+    <string name="tfe_ic_model" translatable="false">Model:</string>
+    <string-array name="tfe_ic_models" translatable="false">
+        <item>Quantized_EfficientNet</item>
+        <item>Float_EfficientNet</item>
+        <item>Quantized_MobileNet</item>
+        <item>Float_MobileNet</item>
+    </string-array>
+
+    <string name="tfe_ic_device" translatable="false">Device:</string>
+    <string-array name="tfe_ic_devices" translatable="false">
+        <item>CPU</item>
+        <!-- TODO: Add GPU  -->
+
+    </string-array>
+    // Schedule
+    <string-array name="Genders">
+        <item>Gender</item>
+        <item>Male </item>
+        <item>Female </item>
+
+
+    </string-array>
+
+    // Adoption
+    <string-array name="AdoptionGenders">
+        <item>Status</item>
+        <item>Single </item>
+        <item>Married</item>
+        <item>Divorced</item>
+        <item>Separated </item>
+        <item>Widowed </item>
+
+
+    </string-array>
+
+
+    // Lost and Found
+    <string-array name="PetGenders">
+        <item>Gender</item>
+        <item>Male </item>
+        <item>Female </item>
+        <item>Unsure </item>
+
+
+    </string-array>
+    <string name="title_activity_maps">Map</string>
+
+
+</resources>

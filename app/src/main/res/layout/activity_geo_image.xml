@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".GeoImageActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#6495ED" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#6495ED" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:id="@+id/tv_img"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginTop="100dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginBottom="50dp"
+
+        />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/recenter_fab"
+        android:src="@drawable/ic_my_location_grey_24dp"
+        app:backgroundTint="@color/white"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_gravity="top|center"
+        app:layout_anchor="@id/fab"
+        app:layout_anchorGravity="top|center"
+        app:useCompatPadding="false"
+        android:paddingTop="32dp"
+        app:fabSize="mini"
+        android:layout_marginTop="570dp"
+        android:layout_marginLeft="295dp"
+        />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:src="@drawable/ic_add"
+        app:useCompatPadding="true"
+        app:backgroundTint="@color/white"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="275dp"
+        android:layout_marginBottom="30dp"
+        />
+
+    <Button
+        android:id="@+id/btnlocate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Locate"
+        android:layout_marginStart="160dp"
+        android:layout_marginTop="500dp"
+        />
+
+
+
+
+
+
+
+
+
+</RelativeLayout>

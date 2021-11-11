@@ -1,0 +1,17 @@
+<component name="libraryTable">
+  <library name="Gradle: com.basgeekball:awesome-validation:4.2@aar">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../.gradle/caches/transforms-2/files-2.1/7b44b5c3b8c6d7152e5be71013d3b4e8/jetified-awesome-validation-4.2/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/../.gradle/caches/transforms-2/files-2.1/7b44b5c3b8c6d7152e5be71013d3b4e8/jetified-awesome-validation-4.2/AndroidManifest.xml" />
+      <root url="file://$PROJECT_DIR$/../.gradle/caches/transforms-2/files-2.1/7b44b5c3b8c6d7152e5be71013d3b4e8/jetified-awesome-validation-4.2/res" />
+      <root url="file://$PROJECT_DIR$/../.gradle/caches/transforms-2/files-2.1/95efb9f2564aa64ae8ee5e21d46494dc/jetified-awesome-validation-4.2/AndroidManifest.xml" />
+      <root url="jar://$PROJECT_DIR$/../.gradle/caches/transforms-2/files-2.1/95efb9f2564aa64ae8ee5e21d46494dc/jetified-awesome-validation-4.2/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/../.gradle/caches/transforms-2/files-2.1/95efb9f2564aa64ae8ee5e21d46494dc/jetified-awesome-validation-4.2/res" />
+      <root url="jar://$PROJECT_DIR$/../.gradle/caches/transforms-2/files-2.1/ad1ccde6e631cc8a5e91a8e33251670d/jetified-awesome-validation-4.2/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/../.gradle/caches/transforms-2/files-2.1/ad1ccde6e631cc8a5e91a8e33251670d/jetified-awesome-validation-4.2/AndroidManifest.xml" />
+      <root url="file://$PROJECT_DIR$/../.gradle/caches/transforms-2/files-2.1/ad1ccde6e631cc8a5e91a8e33251670d/jetified-awesome-validation-4.2/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

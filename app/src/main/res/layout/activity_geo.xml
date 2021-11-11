@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".GeoActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#6495ED" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+
+        android:layout_height="50dp"
+        android:background="#6495ED" />
+
+
+    <fragment
+        android:layout_width="match_parent"
+        android:layout_height="685dp"
+        android:id="@+id/google_map"
+        android:layout_marginTop="50dp"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        />
+
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/maap1"
+        android:src="@drawable/ic_layers"
+        app:backgroundTint="@color/white"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_gravity="top|center"
+        app:layout_anchorGravity="top|center"
+        app:useCompatPadding="false"
+        android:paddingTop="32dp"
+        app:fabSize="mini"
+        android:layout_marginTop="450dp"
+        android:layout_marginLeft="25dp"
+        />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/maap2"
+        android:src="@drawable/ic_layers"
+        app:backgroundTint="@color/white"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_gravity="top|center"
+        app:layout_anchorGravity="top|center"
+        app:useCompatPadding="false"
+        android:paddingTop="32dp"
+        app:fabSize="mini"
+        android:layout_marginTop="450dp"
+        android:layout_marginLeft="25dp"
+        />
+
+    <com.github.clans.fab.FloatingActionMenu
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:src="@drawable/ic_add"
+        app:useCompatPadding="true"
+        app:menu_colorRipple="@color/black"
+        app:menu_colorNormal="@color/CornflowerBlue"
+        android:layout_marginTop="380dp"
+        android:layout_marginLeft="275dp"
+        app:menu_labels_hideAnimation="@anim/fab_slide_out_to_right"
+        app:menu_labels_showAnimation="@anim/fab_slide_in_to_right"
+        app:menu_labels_cornerRadius="3dp"
+        app:menu_labels_singleLine="false"
+        app:menu_openDirection="up">
+
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/fab_folder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_folder"
+            app:fab_colorNormal="@color/CornflowerBlue"
+            app:fab_colorPressed="@color/CornflowerBlue"
+            android:label="Folder"
+            app:fab_size="mini"
+            />
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/fab_report"
+            android:src="@drawable/ic_message"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            app:fab_colorNormal="@color/CornflowerBlue"
+            app:fab_colorPressed="@color/CornflowerBlue"
+            android:label="Report"
+            app:fab_size="mini"
+            />
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/recenter_fab"
+            android:src="@drawable/ic_my_location_grey_24dp"
+            app:backgroundTint="@color/white"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            app:fabSize="mini"
+            android:label="Location"/>
+
+
+
+    </com.github.clans.fab.FloatingActionMenu>
+
+
+
+    <ImageView
+        android:layout_width="120dp"
+        android:layout_height="90dp"
+        android:id="@+id/tv_img"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="50dp"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textLatLong"
+        android:textColor="@color/white"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        android:layout_marginTop="60dp"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textAddress"
+        android:textColor="@color/white"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        android:layout_marginTop="100dp"
+        />
+
+
+
+
+</RelativeLayout>
+

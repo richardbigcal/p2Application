@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_home"
+            android:title="Home"
+            android:icon="@drawable/ic_home"/>
+
+        <item
+            android:id="@+id/nav_rate"
+            android:title="Rate us"
+            android:icon="@drawable/ic_rate"/>
+
+        <item
+            android:id="@+id/nav_learn_more"
+            android:title="Learn more"
+            android:icon="@drawable/ic_help"/>
+
+        <item
+            android:id="@+id/nav_contact_us"
+            android:title="Contact Us"
+            android:icon="@drawable/contact_us"/>
+
+
+    </group>
+
+
+    <item android:title="Profile">
+
+        <menu>
+
+            <group android:checkableBehavior="single">
+
+                <item
+                    android:id="@+id/nav_profile"
+                    android:title="Profile"
+                    android:icon="@drawable/ic_profile"/>
+                <item
+                    android:id="@+id/nav_settings"
+                    android:title="Settings"
+                    android:icon="@drawable/ic_settings"/>
+                <item
+                    android:id="@+id/nav_lgout"
+                    android:title="Logout"
+                    android:icon="@drawable/ic_logout"/>
+
+
+
+            </group>
+
+
+        </menu>
+
+
+    </item>
+
+    <item android:title="Support PAWS">
+
+        <menu>
+
+            <group android:checkableBehavior="single">
+
+                <item
+                    android:id="@+id/nav_donate"
+                    android:title="Donate"
+                    android:icon="@drawable/donate_icon"/>
+                <item
+                    android:id="@+id/nav_volunteer"
+                    android:title="Volunteer"
+                    android:icon="@drawable/volunteer_icon"/>
+                <item
+                    android:id="@+id/nav_shelter_feeding_program"
+                    android:title="Shelter Feeding Program"
+                    android:icon="@drawable/animal_feeding_icon"/>
+                <item
+                    android:id="@+id/nav_shelter_cleaning_program"
+                    android:title="Shelter Cleaning Program"
+                    android:icon="@drawable/cleaning_icon"/>
+
+
+
+            </group>
+
+
+        </menu>
+
+
+    </item>
+
+
+
+
+</menu>

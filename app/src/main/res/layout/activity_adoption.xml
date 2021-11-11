@@ -1,0 +1,756 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <RelativeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:background="@color/home_background">
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+            android:text="ADOPTION APPLICATION"
+            android:textColor="@color/black"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="70dp"
+            android:layout_marginLeft="100dp"
+            android:text="PERSONAL INFO"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/tv_todaydate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="140dp"
+            android:text="Today's Date:"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:textStyle="bold"/>
+
+        <Button
+            android:id="@+id/dateButton"
+            style="?spinnerStyle"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="130dp"
+            android:layout_marginLeft="150dp"
+            android:onClick="openDatePicker"
+            android:text="JAN 01 2021"
+            android:textColor="@color/black"/>
+
+        <EditText
+            android:id="@+id/dt_Name"
+            android:layout_width="240dp"
+            android:layout_height="wrap_content"
+            android:hint="FullName"
+            android:inputType="text"
+            android:textSize="20dp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_marginTop="180dp"
+            />
+
+        <EditText
+            android:id="@+id/et_age"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:hint="Age"
+            android:inputType="numberDecimal"
+            android:textSize="20dp"
+            android:layout_marginLeft="250dp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_marginTop="180dp"
+            />
+        <EditText
+            android:id="@+id/dt_Address"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:hint="Address"
+            android:inputType="textPersonName"
+            android:textSize="20dp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_marginTop="235dp"
+            />
+        <EditText
+            android:id="@+id/dt_Phone"
+            android:layout_width="240dp"
+            android:layout_height="wrap_content"
+            android:hint="Phone"
+            android:inputType="phone"
+            android:textSize="20dp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_marginTop="285dp"
+            />
+
+        <EditText
+            android:id="@+id/dt_Email"
+            android:layout_width="240dp"
+            android:layout_height="wrap_content"
+            android:hint="Email"
+            android:inputType="textEmailAddress"
+            android:textSize="20dp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_marginTop="335dp"
+            />
+        <EditText
+            android:id="@+id/et_occupation"
+            android:layout_width="240dp"
+            android:layout_height="wrap_content"
+            android:hint="Occupation"
+            android:inputType="textPersonName"
+            android:textSize="20dp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_marginTop="380dp"
+            />
+        <Spinner
+            android:id="@+id/spinnerStatus"
+            android:layout_width="160dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="440dp"
+
+            />
+
+
+
+        <EditText
+            android:id="@+id/et_alter"
+            android:layout_width="240dp"
+            android:layout_height="wrap_content"
+            android:hint="Alternate Contact"
+            android:inputType="textPersonName"
+            android:textSize="20dp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_marginTop="490dp"
+            />
+        <EditText
+            android:id="@+id/et_relationship"
+            android:layout_width="240dp"
+            android:layout_height="wrap_content"
+            android:hint="Relationship"
+            android:inputType="textPersonName"
+            android:textSize="20dp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_marginTop="550dp"
+            />
+        <EditText
+            android:id="@+id/et_mobile"
+            android:layout_width="240dp"
+            android:layout_height="wrap_content"
+            android:hint="Phone"
+            android:inputType="phone"
+            android:textSize="20dp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_marginTop="590dp"
+            />
+        <TextView
+            android:id="@+id/tv_Q1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="680dp"
+            android:text="1. What prompted you to adopt from PAWS? "
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            />
+
+        <RadioGroup
+            android:id="@+id/rdbGQ1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="730dp">
+
+            <RadioButton
+                android:id="@+id/rbt_Q1friends"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="Friends"
+                android:textSize="20dp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+
+                />
+            <RadioButton
+                android:id="@+id/rbt_Q1website"
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:text="Website"
+                android:textSize="20dp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_marginLeft="100dp"
+                android:layout_marginTop="-30dp"
+
+                />
+            <RadioButton
+                android:id="@+id/rbt_Q1socialmedia"
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:text="Social Media"
+                android:textSize="20dp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_marginLeft="220dp"
+                android:layout_marginTop="-30dp"
+
+                />
+        </RadioGroup>
+
+
+
+        <TextView
+            android:id="@+id/tv_Q2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="780dp"
+            android:text="2. What are you looking to adopt?"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            />
+
+        <RadioGroup
+            android:id="@+id/rdbGQ2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="820dp">
+
+            <RadioButton
+                android:id="@+id/rbt_Q2cat"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="Cat"
+                android:textSize="20dp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"
+                />
+            <RadioButton
+                android:id="@+id/rbt_Q2dog"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="Dog"
+                android:layout_marginLeft="100dp"
+                android:textSize="20dp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_marginTop="-30dp"
+                />
+
+        </RadioGroup>
+
+
+
+        <TextView
+            android:id="@+id/tv_Q3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="860dp"
+            android:text="3. Have you adopt from PAWS before?"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <RadioGroup
+            android:id="@+id/rdbGQ3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="890dp">
+
+            <RadioButton
+                android:id="@+id/rbt_Q3yes"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="Yes"
+                android:layout_marginLeft="100dp"
+                android:textSize="20dp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"
+                />
+            <RadioButton
+                android:id="@+id/rbt_q3no"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="No"
+                android:layout_marginLeft="190dp"
+                android:textSize="20dp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_marginTop="-30dp"
+                />
+
+        </RadioGroup>
+
+
+
+        <TextView
+            android:id="@+id/tv_Q4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="930dp"
+            android:text="4. Do you know the names of the pet that you want to adopt? You may list up to 3"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            />
+        <EditText
+            android:id="@+id/Q4answer"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:hint="Answer"
+            android:inputType="text"
+            android:textSize="20dp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_marginTop="1000dp"
+            />
+
+        <TextView
+            android:id="@+id/tv_Q5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1060dp"
+            android:text="5. Describe your Ideal pet, Including its sex, age,appearance,temperament, etc.  "
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            />
+        <EditText
+            android:id="@+id/Q5answer"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:hint="Answer"
+            android:inputType="text"
+            android:textSize="20dp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_marginTop="1130dp"
+            />
+        <TextView
+            android:id="@+id/Q6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1180dp"
+            android:text="6. For whom are you adopting a pet?"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            />
+
+        <RadioGroup
+            android:id="@+id/rdbGQ6"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="1240dp">
+
+            <RadioButton
+                android:id="@+id/rbt_Q6myself"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="For myself"
+                android:textSize="20dp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"
+                />
+            <RadioButton
+                android:id="@+id/rbt_Q6forsomeone"
+                android:layout_width="500dp"
+                android:layout_height="wrap_content"
+                android:text="For someone else (as a gift)"
+                android:textSize="20dp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"
+                />
+
+        </RadioGroup>
+
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="4dp"
+            android:background="@color/colorAccent"
+            android:layout_marginTop="1340dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="1350dp"
+            android:layout_marginLeft="60dp"
+            android:text="QUESTIONNAIRE"
+            android:textColor="@color/black"
+            android:textSize="25dp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/Q7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1390dp"
+            android:text="7. Are there children (below 18) in the house?"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:textStyle="bold"/>
+
+        <RadioGroup
+            android:id="@+id/rdbGQ7"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="1440dp">
+
+            <RadioButton
+                android:id="@+id/Q7yes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Yes"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_marginTop="10dp"
+                />
+            <RadioButton
+                android:id="@+id/Q7no"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No"
+                android:layout_marginLeft="100dp"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_marginTop="-30dp"
+                />
+        </RadioGroup>
+
+
+
+        <TextView
+            android:id="@+id/Q8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1480dp"
+            android:text="8. Do you have another pets?"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:textStyle="bold"/>
+
+        <RadioGroup
+            android:id="@+id/rdbGQ8"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="1510dp">
+
+            <RadioButton
+                android:id="@+id/Q8yes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Yes"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_marginTop="10dp"/>
+            <RadioButton
+                android:id="@+id/Q8no"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No"
+                android:layout_marginLeft="100dp"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_marginTop="-30dp"/>
+        </RadioGroup>
+
+
+
+        <TextView
+            android:id="@+id/Q9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1550dp"
+            android:text="9. Do you have pets in the past?"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:textStyle="bold"/>
+
+        <RadioGroup
+            android:id="@+id/rdbGQ9"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="1580dp">
+
+            <RadioButton
+                android:id="@+id/Q9yes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Yes"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_marginTop="10dp"/>
+            <RadioButton
+                android:id="@+id/Q9no"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No"
+                android:layout_marginLeft="100dp"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_marginTop="-30dp"/>
+        </RadioGroup>
+
+
+
+
+        <TextView
+            android:id="@+id/Q10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1620dp"
+            android:text="10. Who else do you live with? "
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:textStyle="bold"/>
+
+        <RadioGroup
+            android:id="@+id/rdbGQ10"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="1660dp">
+
+            <RadioButton
+                android:id="@+id/Q10spouse"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Spouse"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_marginTop="10dp"/>
+            <RadioButton
+                android:id="@+id/Q10parents"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Parents"
+                android:layout_marginLeft="110dp"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_marginTop="-30dp"/>
+        </RadioGroup>
+
+
+
+        <EditText
+            android:id="@+id/Q10others"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:hint="Others"
+            android:layout_marginLeft="230dp"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_marginTop="1650dp"/>
+
+        <TextView
+            android:id="@+id/Q11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1700dp"
+            android:text="11. Are any members of your household allergic to animals? "
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:textStyle="bold"/>
+
+        <RadioGroup
+            android:id="@+id/rdbGQ11"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="1760dp">
+
+            <RadioButton
+                android:id="@+id/Q11yes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Yes"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_marginTop="10dp"/>
+            <RadioButton
+                android:id="@+id/Q11no"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No"
+                android:layout_marginLeft="110dp"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_marginTop="-30dp"/>
+        </RadioGroup>
+
+
+
+        <TextView
+            android:id="@+id/Q12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1800dp"
+            android:text="12. Who will be responsible for feeding, grooming, and generally caring for your pet?   "
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:textStyle="bold"/>
+
+        <EditText
+            android:id="@+id/Q12answer"
+            android:layout_width="330dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1880dp"
+            android:hint="Answer"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/Q13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1930dp"
+            android:text="13. Who will be financially responsible for your pet's need (i.e. food vet balls, etc.) "
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:textStyle="bold"/>
+
+        <EditText
+            android:id="@+id/Q13answer"
+            android:layout_width="330dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2000dp"
+            android:hint="Answer"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/Q14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2050dp"
+            android:text="14. Who will look after your pet if you go on vacation or in case of emergency "
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:textStyle="bold"/>
+
+        <EditText
+            android:id="@+id/Q14answer"
+            android:layout_width="330dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2130dp"
+            android:hint="Answer"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/Q15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2180dp"
+            android:text="15. How many hours in average workdays will your pet be left alone? "
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:textStyle="bold"/>
+        <EditText
+            android:id="@+id/Q15answer"
+            android:layout_width="330dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2240dp"
+            android:hint="Answer"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/Q16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2290dp"
+            android:text="16. Does everyone in the family support your decision to adopt a pet?"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:textStyle="bold"/>
+        <EditText
+            android:id="@+id/Q16answer"
+            android:layout_width="330dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2350dp"
+            android:hint="Answer"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/Q17"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2400dp"
+            android:text="17. What steps will you take familiarize your new pet with his/her new surroundings?"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:textStyle="bold"/>
+        <EditText
+            android:id="@+id/Q17answer"
+            android:layout_width="330dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2480dp"
+            android:hint="Answer"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:textStyle="bold"/>
+
+
+        <Button
+            android:id="@+id/btnNext"
+            android:layout_marginLeft="130dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2600dp"
+            android:text="Submit"/>
+
+
+
+    </RelativeLayout>
+</ScrollView>

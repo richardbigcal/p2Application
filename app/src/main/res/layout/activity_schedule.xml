@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/home_background"
+    android:orientation="vertical"
+    tools:context=".MainActivity"
+    android:id="@+id/drawer_layout">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingLeft="30dp"
+        android:paddingTop="90dp"
+        android:paddingRight="30dp"
+        >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_marginLeft="30dp"
+                        android:text="Scheduling Form"
+                        android:textColor="@color/CornflowerBlue"
+                        android:textSize="35dp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/dt_Name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Fullname"
+                        android:inputType="text"
+                        android:textSize="20dp"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        />
+
+
+                    <EditText
+                        android:id="@+id/dt_Email"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Email"
+                        android:inputType="textEmailAddress"
+                        android:textSize="20dp"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+
+                        />
+
+                    <Spinner
+                        android:id="@+id/spinner1"
+                        android:layout_width="150dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="190dp"
+                        />
+
+                    <EditText
+                        android:id="@+id/et_date"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:hint="Select Date"
+                        android:textSize="20dp"
+                        android:layout_marginTop="-40dp"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+
+                        />
+
+                    <EditText
+                        android:id="@+id/dt_Phone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Phone Number"
+                        android:inputType="phone"
+                        android:textSize="20dp"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+
+                        />
+                    <TextView
+                        android:id="@+id/tv_timer2"
+                        android:layout_width="150dp"
+                        android:layout_height="40dp"
+                        android:inputType="text"
+                        android:textSize="20dp"
+                        android:textColor="@color/black"
+                        android:hint="Select Time"
+                        android:textStyle="bold"
+                        android:layout_marginLeft="1dp"
+
+                        />
+
+                    <EditText
+                        android:id="@+id/et_fblink"
+                        android:layout_width="320dp"
+                        android:layout_height="wrap_content"
+                        android:hint="FB Link"
+                        android:inputType="textPersonName"
+                        android:textSize="20dp"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+
+                        />
+
+
+                    <Button
+                        android:id="@+id/btnSchedDone"
+                        android:backgroundTint="@color/CornflowerBlue"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="50dp"
+                        android:text="Done"
+                        />
+
+
+
+
+
+
+
+
+
+    </LinearLayout>
+
+</RelativeLayout>
