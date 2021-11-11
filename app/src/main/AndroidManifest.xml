@@ -69,11 +69,11 @@
         <activity android:name=".AdoptionActivity" />
         <activity android:name=".DelroActivity" />
         <activity android:name=".MainActivity">
-            <!--<intent-filter>
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>-->
+            </intent-filter>
         </activity>
         <activity
             android:name=".ClassifierActivity"
@@ -89,11 +89,12 @@
             </intent-filter>
         </activity>
         <activity android:name=".Background_splash">
-            <intent-filter>
+            <!--tanggalin nyo nlng po un comments dito, nag bypass muna po ako nitong splash screen since wala pa login-->
+            <!--<intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            </intent-filter>-->
         </activity>
 
         <service android:name=".FetchAddressIntentService" />
