@@ -149,8 +149,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
                 //        Intent intent = new Intent(MainActivity.this, CameraActivity.class);
                 //        startActivity(intent);
+                Toast.makeText(MainActivity.this, "THIS WAS CLICKED", Toast.LENGTH_SHORT).show();
 
-
+                Intent intent = new Intent(MainActivity.this, ClassifierActivity.class);
+                startActivity(intent);
             }
         });
 

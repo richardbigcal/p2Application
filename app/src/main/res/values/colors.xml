@@ -15,6 +15,7 @@
 
 
     //
+    <color name="transparent">#1A000000</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
