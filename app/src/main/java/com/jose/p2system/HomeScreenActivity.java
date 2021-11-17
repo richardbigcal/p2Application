@@ -1,24 +1,34 @@
 package com.jose.p2system;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
+
+import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.provider.MediaStore;
 import android.util.Base64;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
+import android.widget.FrameLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -26,6 +36,10 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.android.material.snackbar.Snackbar;
+import com.jose.p2system.fields.UserProfileField;
+import com.jose.p2system.fields.UserProfileInfoField;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -36,6 +50,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 import de.hdodenhof.circleimageview.CircleImageView;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class HomeScreenActivity extends AppCompatActivity {
 
@@ -51,13 +69,32 @@ public class HomeScreenActivity extends AppCompatActivity {
     private Bitmap bitmap;
     CircleImageView profile_image;
 
+
+    //
+    public static String TAG_STATIC = "ACT_HOMESCREEN";
+    String data_token;
+    private static String BASE_URL = "http://192.168.42.108/app_connection/app-connection-p2p/development/"; //android phone ko
+    //    private static String BASE_URL = "http://192.168.100.105/app_connection/app-connection-p2p/development/"; //android emulator ko
+RelativeLayout parentLayout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_screen);
 
-        sessionManager = new SessionManager(this);
-        sessionManager.checkLogin();
+
+        //
+        SharedPreferences sharedPreference = this.getApplicationContext().getSharedPreferences("sharedPref", Context.MODE_PRIVATE);
+        data_token = sharedPreference.getString("data_token", "");
+        Log.d(TAG_STATIC, data_token);
+
+        getProfileData();
+
+
+        //HIDE PANSAMANTALA
+//        sessionManager = new SessionManager(this);
+//        sessionManager.checkLogin();
+
+        parentLayout = findViewById(R.id.parentLayout);
 
         btn_photo_upload = findViewById(R.id.btn_photo);
 
@@ -72,24 +109,24 @@ public class HomeScreenActivity extends AppCompatActivity {
         profile_image = findViewById(R.id.profile_image);
 
 
-        HashMap<String, String> user = sessionManager.getUserDetail();
-        getId = user.get(sessionManager.ID);
 
-        btn_Continue.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        //HIDE PANSAMANTALA
+//        HashMap<String, String> user = sessionManager.getUserDetail();
+//        getId = user.get(sessionManager.ID);
 
-                SharedPreferences preferences = getSharedPreferences("checkbox", MODE_PRIVATE);
-                SharedPreferences.Editor editor = preferences.edit();
-                editor.putString("remember", "false");
-                editor.apply();
+        btn_Continue.setOnClickListener(view -> {
 
-                sessionManager.logout();
-                Intent intent = new Intent(HomeScreenActivity.this, LoginActivity.class);
-                startActivity(intent);
-                finish();
+            //HIDE PANSAMANTALA
+//            SharedPreferences preferences = getSharedPreferences("checkbox", MODE_PRIVATE);
+//            SharedPreferences.Editor editor = preferences.edit();
+//            editor.putString("remember", "false");
+//            editor.apply();
+//
+//            sessionManager.logout();
+//            Intent intent = new Intent(HomeScreenActivity.this, LoginActivity.class);
+//            startActivity(intent);
+//            finish();
 
-            }
         });
         btn_photo_upload.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -107,6 +144,7 @@ public class HomeScreenActivity extends AppCompatActivity {
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST, URL_READ,
                 new Response.Listener<String>() {
+                    @SuppressLint("ResourceAsColor")
                     @Override
                     public void onResponse(String response) {
                         progressDialog.dismiss();
@@ -160,8 +198,156 @@ public class HomeScreenActivity extends AppCompatActivity {
         requestQueue.add(stringRequest);
 
     }
+
+    // * 6a657373696b61795048 * //
+    // RETROFIT METHOD CONNECTION
+
+    public void getProfileData() {
+        Log.d(TAG, "running --");
+
+        //WE WILL GET THE PROFILE DATA FROM SERVER USING RETROFIT
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
+        APInterface apInterface = retrofit.create(APInterface.class);
+
+        Map<String, String> headers = new HashMap<>();
+        headers.put("Authorization", " " + data_token);
+        Call<UserProfileField> call = apInterface.doGetProfileData(headers);
+        call.enqueue(new Callback<UserProfileField>() {
+
+            @Override
+            public void onResponse(Call<UserProfileField> call, retrofit2.Response<UserProfileField> response) {
+
+                String status_code = response.body().getStatus_code();
+                String status_message = response.body().getStatus_message();
+                Log.d(TAG_STATIC, "STATUS CODE & MESSAGE : " + status_code + status_message);
+
+                UserProfileInfoField metadataField = response.body().getUserProfileInfoField();
+                String fullname = metadataField.getUser_fullname();
+                String email = metadataField.getUser_email();
+                String mobileno = metadataField.getUser_mobileno();
+                String address = metadataField.getUser_address();
+
+                if (response.isSuccessful()) {
+                    Log.d(TAG, "RESPONSE SUCCESS");
+
+                    dt_Name.setText(fullname);
+                    dt_Name.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.black));
+
+                    dt_Email.setText(email);
+                    dt_Email.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.black));
+
+                    dt_Phone.setText(mobileno);
+                    dt_Phone.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.black));
+
+                    dt_Address.setText(address);
+                    dt_Address.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.black));
+
+
+                } else {
+                    switch (response.code()) {
+                        case 406: //
+                            new Handler(Looper.getMainLooper()).postDelayed(() -> {
+                                Snackbar snackbar = Snackbar.make(parentLayout, status_message, Snackbar.LENGTH_LONG).setAction("", view -> {
+
+                                });
+                                View view = snackbar.getView();
+                                FrameLayout.LayoutParams params = (FrameLayout.LayoutParams) view.getLayoutParams();
+                                params.gravity = Gravity.TOP;
+                                view.setLayoutParams(params);
+                                view.setBackgroundColor(ContextCompat.getColor(getApplicationContext(), R.color.color_error));
+                                snackbar.setActionTextColor(Color.WHITE); // CHANGING MESSAGE TEXT COLOR
+
+                                // CHANGING ACTION BUTTON TEXT COLOR
+                                View sbView = snackbar.getView();
+                                TextView textView = sbView.findViewById(com.google.android.material.R.id.snackbar_text);
+                                textView.setTextColor(Color.WHITE);
+
+                                snackbar.show();
+                            }, 2000);
+                            break;
+                        case 404:
+                            new Handler(Looper.getMainLooper()).postDelayed(() -> {
+                                Snackbar snackbar = Snackbar.make(parentLayout, "not found", Snackbar.LENGTH_LONG).setAction("", view -> {
+
+                                });
+                                View view = snackbar.getView();
+                                FrameLayout.LayoutParams params = (FrameLayout.LayoutParams) view.getLayoutParams();
+                                params.gravity = Gravity.TOP;
+                                view.setLayoutParams(params);
+                                view.setBackgroundColor(ContextCompat.getColor(getApplicationContext(), R.color.color_error));
+                                snackbar.setActionTextColor(Color.WHITE); // CHANGING MESSAGE TEXT COLOR
+
+                                // CHANGING ACTION BUTTON TEXT COLOR
+                                View sbView = snackbar.getView();
+                                TextView textView = sbView.findViewById(com.google.android.material.R.id.snackbar_text);
+                                textView.setTextColor(Color.WHITE);
+
+                                snackbar.show();
+                            }, 2000);
+                            break;
+                        case 500:
+                            new Handler(Looper.getMainLooper()).postDelayed(() -> {
+                                Snackbar snackbar = Snackbar.make(parentLayout, "server broken", Snackbar.LENGTH_LONG).setAction("", view -> {
+
+                                });
+                                View view = snackbar.getView();
+                                FrameLayout.LayoutParams params = (FrameLayout.LayoutParams) view.getLayoutParams();
+                                params.gravity = Gravity.TOP;
+                                view.setLayoutParams(params);
+                                view.setBackgroundColor(ContextCompat.getColor(getApplicationContext(), R.color.color_error));
+                                snackbar.setActionTextColor(Color.WHITE); // CHANGING MESSAGE TEXT COLOR
+
+                                // CHANGING ACTION BUTTON TEXT COLOR
+                                View sbView = snackbar.getView();
+                                TextView textView = sbView.findViewById(com.google.android.material.R.id.snackbar_text);
+                                textView.setTextColor(Color.WHITE);
+
+                                snackbar.show();
+                            }, 2000);
+                            break;
+                        default:
+                            new Handler(Looper.getMainLooper()).postDelayed(() -> {
+                                Snackbar snackbar = Snackbar.make(parentLayout, "unknown error", Snackbar.LENGTH_LONG).setAction("", view12 -> {
+
+                                });
+                                View view12 = snackbar.getView();
+                                FrameLayout.LayoutParams params = (FrameLayout.LayoutParams) view12.getLayoutParams();
+                                params.gravity = Gravity.TOP;
+                                view12.setLayoutParams(params);
+                                view12.setBackgroundColor(ContextCompat.getColor(getApplicationContext(), R.color.color_error));
+                                snackbar.setActionTextColor(Color.WHITE); // CHANGING MESSAGE TEXT COLOR
+
+                                // CHANGING ACTION BUTTON TEXT COLOR
+                                View sbView = snackbar.getView();
+                                TextView textView = sbView.findViewById(com.google.android.material.R.id.snackbar_text);
+                                textView.setTextColor(Color.WHITE);
+
+                                snackbar.show();
+                            }, 2000);
+                            break;
+                    }
+
+                }
+
+
+            }
+
+            @Override
+            public void onFailure(Call<UserProfileField> call, Throwable t) {
+
+            }
+        });
+
+
+    }
+
+
     @Override
-    protected void onResume(){
+    protected void onResume() {
         super.onResume();
         getUserDetail();
     }
@@ -180,7 +366,7 @@ public class HomeScreenActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
-        switch (item.getItemId()){
+        switch (item.getItemId()) {
             case R.id.menu_edit:
 
                 dt_Name.setFocusableInTouchMode(true);
@@ -250,13 +436,13 @@ public class HomeScreenActivity extends AppCompatActivity {
 
                             if (success.equals("1")) {
                                 Toast.makeText(HomeScreenActivity.this, "Success!", Toast.LENGTH_SHORT).show();
-                                sessionManager.createSession(name, email, phone,address, id);
+                                sessionManager.createSession(name, email, phone, address, id);
                             }
 
                         } catch (JSONException e) {
                             e.printStackTrace();
                             progressDialog.dismiss();
-                            Toast.makeText(HomeScreenActivity.this, "Error " , Toast.LENGTH_SHORT).show();
+                            Toast.makeText(HomeScreenActivity.this, "Error ", Toast.LENGTH_SHORT).show();
                         }
 
                     }
@@ -265,7 +451,7 @@ public class HomeScreenActivity extends AppCompatActivity {
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         progressDialog.dismiss();
-                        Toast.makeText(HomeScreenActivity.this, "Error " , Toast.LENGTH_SHORT).show();
+                        Toast.makeText(HomeScreenActivity.this, "Error ", Toast.LENGTH_SHORT).show();
                     }
                 }) {
             @Override
@@ -329,7 +515,7 @@ public class HomeScreenActivity extends AppCompatActivity {
                             JSONObject jsonObject = new JSONObject(response);
                             String success = jsonObject.getString("success");
 
-                            if (success.equals("1")){
+                            if (success.equals("1")) {
                                 Toast.makeText(HomeScreenActivity.this, "Success!", Toast.LENGTH_SHORT).show();
                             }
 
@@ -344,10 +530,9 @@ public class HomeScreenActivity extends AppCompatActivity {
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         progressDialog.dismiss();
-                        Toast.makeText(HomeScreenActivity.this, "Try Again!" , Toast.LENGTH_SHORT).show();
+                        Toast.makeText(HomeScreenActivity.this, "Try Again!", Toast.LENGTH_SHORT).show();
                     }
-                })
-        {
+                }) {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String, String> params = new HashMap<>();
@@ -364,7 +549,7 @@ public class HomeScreenActivity extends AppCompatActivity {
 
     }
 
-    public String getStringImage(Bitmap bitmap){
+    public String getStringImage(Bitmap bitmap) {
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
         bitmap.compress(Bitmap.CompressFormat.JPEG, 100, byteArrayOutputStream);
 

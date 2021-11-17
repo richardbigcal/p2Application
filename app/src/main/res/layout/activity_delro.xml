@@ -67,9 +67,9 @@
 
                     <TextView
                         android:id="@+id/txtdelro"
-                        android:layout_marginTop="50dp"
                         android:layout_width="164dp"
                         android:layout_height="match_parent"
+                        android:layout_marginTop="50dp"
                         android:text="Adopt DELRO"
                         android:textColor="#137117"
                         android:textSize="25dp"
@@ -126,10 +126,9 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="210dp"
                         android:text="Delro’s Story"
-                        android:textStyle="bold"
+                        android:textColor="#137117"
                         android:textSize="30dp"
-                        android:textColor="#137117">
-                    </TextView>
+                        android:textStyle="bold"></TextView>
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -138,8 +137,7 @@
                         android:text="Delro is a portmanteau of Del Rosario Street, the location of this young lady’s rescue. Delro is yet another case of the way stray dogs are treated on the streets. Ignored and underfed. She had been reported to PAWS as an extremely sick dog, wandering the roads of Manila. This rescue case is another feat by one of our long standing volunteers, Shirley. When Delro was finally secured and brought to PARC for an initial assessment, her skin was horribly swollen and completely bald. Her particular case of mange was so extreme that her bones were nearly invisible under her bloated skin.
 
 Through careful planning and heavy care, PAWS staff and volunteers managed to improve her condition. Her introduction to the rest of the canines was smooth, and she now enjoys her time in one of our dog runs."
-                        android:textSize="16dp"
-                        > </TextView>
+                        android:textSize="16dp"></TextView>
 
                     <TextView
                         android:layout_width="wrap_content"

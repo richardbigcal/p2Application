@@ -8,6 +8,8 @@
          Google Maps Android API v2, but you must specify either coarse or fine
          location permissions for the "MyLocation" functionality.
     -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -36,8 +38,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.P2system"
         android:usesCleartextTraffic="true"
-        tools:targetApi="m">
+        tools:targetApi="m"
+        android:hardwareAccelerated="true"
+        android:largeHeap="true"
 
+        android:networkSecurityConfig="@xml/network_security_config">
+
+        <meta-data
+            android:name="com.google.android.actions"
+            android:resource="@xml/network_security_config" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -56,7 +65,7 @@
         <activity android:name=".ShowSavedLocationsList" />
         <activity android:name=".GgeoActivity" />
         <activity android:name=".HomeScreenActivity" />
-        <activity android:name=".LoginActivity" />
+<!--        <activity android:name=".LoginActivity" />-->
         <activity android:name=".RegisterActivity" />
         <activity android:name=".GeoImageActivity" />
         <activity android:name=".GeoActivity" />
@@ -68,10 +77,11 @@
         <activity android:name=".GhostActivity" />
         <activity android:name=".AdoptionActivity" />
         <activity android:name=".DelroActivity" />
-        <activity android:name=".MainActivity">
+
+        <activity android:name=".MainActivity"/>
+        <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

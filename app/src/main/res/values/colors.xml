@@ -19,6 +19,7 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
+    <color name="color_error">#D01C1F</color>
     <!--- Dashboard Colors  -->
 
     <style name="navigationTheme">

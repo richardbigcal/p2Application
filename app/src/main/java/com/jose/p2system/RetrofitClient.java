@@ -20,8 +20,8 @@ public class RetrofitClient {
         return myClient;
     }
 
-    public Api getAPI(){
-        return retrofit.create(Api.class);
+    public APInterface getAPI(){
+        return retrofit.create(APInterface.class);
 
     }
 }
